@@ -27,6 +27,7 @@ import { CustomcomponentComponent } from './components/customcomponent/customcom
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({ counter: counterReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
