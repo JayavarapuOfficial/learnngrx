@@ -1,0 +1,30 @@
+<form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ pageTitle }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          placeholder="Enter blog title"
+          name="title"
+          required
+          formControlName="title"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>description</mat-label>
+        <textarea matInput required formControlName="description"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card-footer>
+    <button type="submit" mat-raised-button color="primary" (click)="addBlog()">
+      Add Blog
+    </button>
+    <a mat-raised-button color="warn" (click)="cancel()">Cancel</a>
+  </mat-card-footer>
+</form>

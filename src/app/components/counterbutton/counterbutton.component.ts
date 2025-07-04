@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CounterModel } from '../../shared/store/counter.model';
 import { getCounterSelector } from '../../shared/store/counter.selector';
+import { AppstateModel } from '../../shared/store/global/app.state.model';
 
 @Component({
   selector: 'app-counterbutton',
@@ -11,7 +12,7 @@ import { getCounterSelector } from '../../shared/store/counter.selector';
   styleUrl: './counterbutton.component.css',
 })
 export class CounterbuttonComponent implements OnInit {
-  constructor(private store: Store<{ counter: CounterModel }>) {}
+  constructor(private store: Store<AppstateModel>) {}
 
   ngOnInit(): void {}
 

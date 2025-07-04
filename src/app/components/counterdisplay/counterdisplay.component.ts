@@ -6,6 +6,7 @@ import {
   getChannelNameSelector,
   getCounterSelector,
 } from '../../shared/store/counter.selector';
+import { AppstateModel } from '../../shared/store/global/app.state.model';
 
 @Component({
   selector: 'app-counterdisplay',
@@ -18,7 +19,7 @@ export class CounterdisplayComponent implements OnInit, OnDestroy {
   counterDisplay!: number;
   channelName: string = '';
   coutnerStateSubscribe!: Subscription;
-  constructor(private store: Store<{ counter: CounterModel }>) {}
+  constructor(private store: Store<AppstateModel>) {}
 
   ngOnInit(): void {
     this.coutnerStateSubscribe = this.store

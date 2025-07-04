@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { custom_Increment_Action } from '../../shared/store/counter.actions';
 import { CounterModel } from '../../shared/store/counter.model';
 import { getCounterSelector } from '../../shared/store/counter.selector';
+import { AppstateModel } from '../../shared/store/global/app.state.model';
 
 @Component({
   selector: 'app-customcomponent',
@@ -14,7 +15,7 @@ import { getCounterSelector } from '../../shared/store/counter.selector';
 export class CustomcomponentComponent implements OnInit {
   counterInput!: number;
   actionType: string = 'add';
-  constructor(private store: Store<{ counter: CounterModel }>) {}
+  constructor(private store: Store<AppstateModel>) {}
   ngOnInit(): void {}
   handleCustomIncrement() {
     this.store.dispatch(
