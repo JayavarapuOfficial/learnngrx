@@ -1,5 +1,9 @@
 {
   "blogs": [
-    { "id": 1, "title": "Hello Blog", "description": "Here is hte description" }
+    {
+      "id": 1,
+      "title": "Hello Blog",
+      "description": "Here is the  description"
+    }
   ]
 }

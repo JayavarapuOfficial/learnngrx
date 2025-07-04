@@ -21,6 +21,8 @@ import { CounterComponent } from './components/counter/counter.component';
 import { blogReducer } from './shared/store/blog/blog.reducers';
 import { AppStore } from './shared/store/global/app.state';
 import { AddblogComponent } from './components/addblog/addblog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NewcounterComponent } from './components/newcounter/newcounter.component';
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: 'Home', component: HomeComponent },
@@ -38,6 +40,7 @@ const routes: Routes = [
     HomeComponent,
     CounterComponent,
     AddblogComponent,
+    NewcounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ const routes: Routes = [
     StoreModule.forRoot(AppStore),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
