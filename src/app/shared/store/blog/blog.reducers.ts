@@ -4,6 +4,7 @@ import {
   add_Blog_Action,
   delete_Blog_Action,
   load_Blogs_Action,
+  load_blogs_success_effect_action,
   update_Blog_Action,
 } from './blog.actions';
 
@@ -31,6 +32,9 @@ const _blogReducer = createReducer(
   on(delete_Blog_Action, (state, action) => {
     const updatedBlogs = state.blogs.filter((blog) => blog.id !== action.id);
     return { ...state, blogs: updatedBlogs };
+  }),
+  on(load_blogs_success_effect_action, (state, action) => {
+    return { ...state, blogs: action.blogs };
   })
 );
 

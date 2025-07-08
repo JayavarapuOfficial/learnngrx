@@ -23,6 +23,7 @@ import { AppStore } from './shared/store/global/app.state';
 import { AddblogComponent } from './components/addblog/addblog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewcounterComponent } from './components/newcounter/newcounter.component';
+import { BlogEffects } from './shared/store/blog/blog.effects';
 const routes: Routes = [
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: 'Home', component: HomeComponent },
@@ -51,6 +52,7 @@ const routes: Routes = [
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     RouterModule.forRoot(routes),
     HttpClientModule,
+    EffectsModule.forRoot([BlogEffects]),
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

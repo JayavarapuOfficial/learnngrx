@@ -10,7 +10,7 @@ export const getBlogsSelector = createSelector(
   }
 );
 
-export const getBlogByIdSelector  = (id: number) =>
+export const getBlogByIdSelector = (id: number) =>
   createSelector(getBlogState, (state: BlogState) => {
     return state.blogs.find((blog) => blog.id === id);
   });

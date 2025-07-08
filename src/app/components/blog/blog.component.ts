@@ -7,6 +7,7 @@ import { AddblogComponent } from '../addblog/addblog.component';
 import {
   add_Blog_Action,
   delete_Blog_Action,
+  load_Blogs_Action,
 } from '../../shared/store/blog/blog.actions';
 
 @Component({
@@ -23,6 +24,7 @@ export class BlogComponent implements OnInit {
     private dialog: MatDialog
   ) {}
   ngOnInit(): void {
+    this.store.dispatch(load_Blogs_Action());
     this.store.select(getBlogsSelector).subscribe((data) => {
       this.blogs = data;
       console.log('Blogs from store:', this.blogs);
